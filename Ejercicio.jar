@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class Exp1_S3_Diego_Sandoval {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner= new Scanner(System.in);
+		String tipoEntrada, categoria;
+		int precio = 0;
+		boolean entradaValida = true;
+		
+		System.out.println(" BIENVENIDO AL SISTEMA INFORMÁTICO DEL TEATRO MORO");
+		System.out.println("Ingrese tipo de entrada (VIP, Platea baja, Platea alta, Palcos) ");
+		tipoEntrada = scanner.nextLine() .trim().toUpperCase();
+		System.out.println("Ingrese categoría (Estudiante/Público): ");
+		categoria = scanner.nextLine().trim().toUpperCase();
+		
+		switch (tipoEntrada) {
+		case "VIP":
+			if (categoria.equals("ESTUDIANTE")) {
+				precio = 20000;
+			} else if (categoria.equals("PUBLICO")) {
+				precio = 30000;
+			} else {
+				entradaValida = false;
+			}
+			break;
+		case "PLATEA BAJA":
+			if (categoria.equals("ESTUDIANTE")) {
+				precio= 10000;
+			} else if (categoria.equals("PUBLICO")) {
+				precio = 15000;
+			} else {
+				entradaValida = false;
+			}
+			break;
+		case "PLATEA ALTA":
+			if (categoria.equals("ESTUDIANTE")) {
+				precio = 9000;
+			} else if (categoria.equals("PUBLICO")) {
+				precio = 18000;
+			} else {
+				entradaValida = false;
+			}
+			break;
+		case "PALCOS":
+			if (categoria.equals("ESTUDIANTE")) {
+				precio = 6500;
+				} else if (categoria.equals("PUBLICO")) {
+					precio = 13000;
+				} else {
+					entradaValida = false;
+				}
+			break;
+			default:
+				entradaValida = false;
+		}
+		
+		if (entradaValida) {
+			System.out.println("Total a pagar: $" + precio);
+			System.out.println("Gracias por su compra, dusfrute la función.");
+		} else {
+			System.out.println("Error: Entrada no válida.");
+		}
+		
+		scanner.close();
+
+	}
+
+}
